@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Energy Clash - 2D Fighting Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="game-wrapper">
+
+    <header class="top-bar">
+      <div>
+        <span class="game-label">ENERGY CLASH</span>
+        <h1>⚡ Ultimate Fighter</h1>
+      </div>
+
+      <button id="restartBtn">RESTART</button>
+    </header>
+
+    <main class="game-container">
+
+      <!-- HUD -->
+      <section class="hud">
+
+        <div class="fighter-info player-info">
+          <div class="name-row">
+            <span>PLAYER</span>
+            <strong id="playerName">AURA</strong>
+          </div>
+
+          <div class="health-bar">
+            <div id="playerHealth" class="health-fill player-health"></div>
+          </div>
+
+          <div class="energy-bar">
+            <div id="playerEnergy" class="energy-fill"></div>
+          </div>
+        </div>
+
+        <div class="timer" id="timer">60</div>
+
+        <div class="fighter-info enemy-info">
+          <div class="name-row">
+            <strong>VEX</strong>
+            <span>CPU</span>
+          </div>
+
+          <div class="health-bar">
+            <div id="enemyHealth" class="health-fill enemy-health"></div>
+          </div>
+
+          <div class="energy-bar">
+            <div id="enemyEnergy" class="energy-fill enemy-energy"></div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- Game -->
+      <section class="game-screen">
+
+        <canvas id="gameCanvas" width="1000" height="560"></canvas>
+
+        <div id="messageScreen" class="message-screen">
+          <div class="message-box">
+            <div class="message-icon">⚡</div>
+            <h2 id="messageTitle">ENERGY CLASH</h2>
+            <p id="messageText">
+              Defeat your opponent using attacks and energy blasts.
+            </p>
+            <button id="startBtn">START FIGHT</button>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- Controls -->
+      <section class="controls">
+
+        <div class="control-group">
+          <h3>PLAYER CONTROLS</h3>
+
+          <div class="keys">
+            <div class="key-row">
+              <span class="key">W</span>
+              <small>Jump</small>
+            </div>
+
+            <div class="key-row">
+              <span class="key">A</span>
+              <small>Left</small>
+            </div>
+
+            <div class="key-row">
+              <span class="key">D</span>
+              <small>Right</small>
+            </div>
+
+            <div class="key-row">
+              <span class="key">S</span>
+              <small>Block</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="attack-controls">
+
+          <div class="attack-item">
+            <span class="attack-key punch-key">J</span>
+            <span>Punch</span>
+          </div>
+
+          <div class="attack-item">
+            <span class="attack-key kick-key">K</span>
+            <span>Kick</span>
+          </div>
+
+          <div class="attack-item">
+            <span class="attack-key blast-key">L</span>
+            <span>Blast</span>
+          </div>
+
+          <div class="attack-item">
+            <span class="attack-key special-key">I</span>
+            <span>Special</span>
+          </div>
+
+        </div>
+
+      </section>
+
+      <div class="mobile-controls">
+
+        <div class="movement-buttons">
+          <button data-key="a">←</button>
+          <button data-key="w">↑</button>
+          <button data-key="d">→</button>
+          <button data-key="s">🛡</button>
+        </div>
+
+        <div class="mobile-attacks">
+          <button data-key="j">J</button>
+          <button data-key="k">K</button>
+          <button data-key="l">L</button>
+          <button data-key="i">I</button>
+        </div>
+
+      </div>
+
+    </main>
+
+    <footer>
+      <p>Original anime-inspired fighting game • Built with HTML, CSS & JavaScript</p>
+    </footer>
+
+  </div>
+
+  <script src="game.js"></script>
+</body>
+  </html>
