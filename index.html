@@ -2,39 +2,138 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Energy Clash - 2D Fighting Game</title>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+  >
+  <title>Energy Clash</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <div class="game-wrapper">
+<div class="game-wrapper">
 
-    <header class="top-bar">
-      <div>
-        <span class="game-label">ENERGY CLASH</span>
-        <h1>⚡ Ultimate Fighter</h1>
+  <header class="top-bar">
+    <div>
+      <span class="game-label">ENERGY CLASH</span>
+      <h1>⚡ Ultimate Fighter</h1>
+    </div>
+
+    <button id="restartBtn">RESTART</button>
+  </header>
+
+  <main class="game-container">
+
+    <section class="hud">
+
+      <div class="fighter-info">
+        <div class="name-row">
+          <span>PLAYER</span>
+          <strong>AURA</strong>
+        </div>
+
+        <div class="health-bar">
+          <div id="playerHealth" class="health-fill player-health"></div>
+        </div>
+
+        <div class="energy-bar">
+          <div id="playerEnergy" class="energy-fill"></div>
+        </div>
       </div>
 
-      <button id="restartBtn">RESTART</button>
-    </header>
+      <div id="timer" class="timer">60</div>
 
-    <main class="game-container">
+      <div class="fighter-info">
+        <div class="name-row">
+          <strong>VEX</strong>
+          <span>CPU</span>
+        </div>
 
-      <!-- HUD -->
-      <section class="hud">
+        <div class="health-bar enemy-health-bar">
+          <div id="enemyHealth" class="health-fill enemy-health"></div>
+        </div>
 
-        <div class="fighter-info player-info">
-          <div class="name-row">
-            <span>PLAYER</span>
-            <strong id="playerName">AURA</strong>
-          </div>
+        <div class="energy-bar">
+          <div id="enemyEnergy" class="energy-fill enemy-energy"></div>
+        </div>
+      </div>
 
-          <div class="health-bar">
-            <div id="playerHealth" class="health-fill player-health"></div>
-          </div>
+    </section>
 
+    <section class="game-screen">
+
+      <canvas id="gameCanvas" width="1000" height="560"></canvas>
+
+      <div id="messageScreen" class="message-screen">
+
+        <div class="message-box">
+
+          <div class="message-icon">⚡</div>
+
+          <h2 id="messageTitle">ENERGY CLASH</h2>
+
+          <p id="messageText">
+            Defeat your opponent using attacks and energy blasts.
+          </p>
+
+          <button id="startBtn">START FIGHT</button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- Mobile controls -->
+
+    <section class="mobile-controls">
+
+      <div class="movement-buttons">
+        <button data-key="a">←</button>
+        <button data-key="w">↑</button>
+        <button data-key="d">→</button>
+        <button data-key="s">🛡️</button>
+      </div>
+
+      <div class="mobile-attacks">
+        <button data-key="j">J</button>
+        <button data-key="k">K</button>
+        <button data-key="l">L</button>
+        <button data-key="i">I</button>
+      </div>
+
+    </section>
+
+    <section class="desktop-controls">
+
+      <div>
+        <strong>MOVE</strong>
+        <span>W A S D</span>
+      </div>
+
+      <div>
+        <strong>ATTACK</strong>
+        <span>J Punch</span>
+        <span>K Kick</span>
+        <span>L Blast</span>
+        <span>I Special</span>
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>
+    Original anime-inspired fighting game • HTML • CSS • JavaScript
+  </footer>
+
+</div>
+
+<script src="game.js"></script>
+
+</body>
+</html>
           <div class="energy-bar">
             <div id="playerEnergy" class="energy-fill"></div>
           </div>
